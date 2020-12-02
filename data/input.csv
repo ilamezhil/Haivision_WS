@@ -1,0 +1,16 @@
+sno|testcase|url|resources|method|resetflag|quotesid|payload|exp_quotes|exp_statuscode|exp_oktag|exp_errormsg
+1|Get All Quotes Positive|http://127.0.0.1:6543/|quotes|get|true||||200|true|
+2.1|Get specific quotes Positive|http://127.0.0.1:6543/|quotes|get|true|1||"We have nothing to fear but fear itself!"|200|true|
+2.2|Get Non Existing quotes Negative|http://127.0.0.1:6543/|quotes|get|true|11|||404|false|"No such resource"
+3|post single quotes positive|http://127.0.0.1:6543/|quotes|post|true||"Fourth Quotes ID"||201|true|
+4|post 20 quotes positive|http://127.0.0.1:6543/|quotes|post|true||"4","5","6","7","8","Nine","Ten","11","12","13","14","15","16","17","18","19","20"||201|true|
+5|post > 20 quotes negative|http://127.0.0.1:6543/|quotes|post|true||"4","5","6","7","8","Nine","Ten","11","12","13","14","15","16","17","18","19","20","21"||500|false|"Unhandled error"
+6|post invalid type quotes Negative|http://127.0.0.1:6543/|quotes|post|true||4||400|false|"Invalid type for field "text", expected string"
+7|Delete single quotes positive|http://127.0.0.1:6543/|quotes|delete|true|1|||200|true|
+8|Delete multiple quotes positive|http://127.0.0.1:6543/|quotes|delete|true|1,2|||200|true|
+9|Delete same quotes twice Negative|http://127.0.0.1:6543/|quotes|delete|true|1,1|||404|false|"No such resource"
+10|Delete Non existing quotes Negative|http://127.0.0.1:6543/|quotes|delete|true|11|||404|false|"No such resource"
+11|Post Two Quotes Without Reset|http://127.0.0.1:6543/|quotes|post|false||"Fourth Quotes ID","Fifth Quotes ID"||201|true|
+12|Delete One Quotes of sno#11 without Reset Positive|http://127.0.0.1:6543/|quotes|delete|false|4|||200|true|
+13|Get Quotes deleted in sno#12 without Reset Negative|http://127.0.0.1:6543/|quotes|get|false|4||"Fourth Quotes ID"|404|false|"No such resource"
+14|Get Quotes posted in sno#11 without Reset Positive|http://127.0.0.1:6543/|quotes|get|false|5||"Fifth Quotes ID"|200|true|
