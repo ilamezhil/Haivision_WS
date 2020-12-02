@@ -1,0 +1,704 @@
+12/02/2020 12:45:35 PM INFO Haivision Rest API Assignment Detailed Test Log 
+
+12/02/2020 12:45:35 PM INFO Executing SNo#1, TestCase:Get All Quotes Positive
+12/02/2020 12:45:35 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:35 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 311
+12/02/2020 12:45:35 PM INFO Assertion - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Execution Completed SNo#1, TestCase:Get All Quotes Positive, Status:Pass 
+
+
+12/02/2020 12:45:35 PM INFO Executing SNo#2.1, TestCase:Get specific quotes Positive
+12/02/2020 12:45:35 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:35 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes/1 HTTP/1.1" 200 101
+12/02/2020 12:45:35 PM INFO Assertion - GetSpecific - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion - GetSpecific - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion - GetSpecific - Get Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM INFO Execution Completed SNo#2.1, TestCase:Get specific quotes Positive, Status:Pass 
+
+
+12/02/2020 12:45:35 PM INFO Executing SNo#2.2, TestCase:Get Non Existing quotes Negative
+12/02/2020 12:45:35 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:35 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes/11 HTTP/1.1" 404 48
+12/02/2020 12:45:35 PM INFO Assertion - GetSpecific - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion - GetSpecific - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion - GetSpecific - Get Response Status Error Message - Pass
+12/02/2020 12:45:35 PM INFO Execution Completed SNo#2.2, TestCase:Get Non Existing quotes Negative, Status:Pass 
+
+
+12/02/2020 12:45:35 PM INFO Executing SNo#3, TestCase:post single quotes positive
+12/02/2020 12:45:35 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:35 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'Fourth Quotes ID'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 77
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 372
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO Execution Completed SNo#3, TestCase:post single quotes positive, Status:Pass 
+
+
+12/02/2020 12:45:35 PM INFO Executing SNo#4, TestCase:post 20 quotes positive
+12/02/2020 12:45:35 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:35 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'4'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 62
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 357
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'5'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 62
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 403
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'6'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 62
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 449
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'7'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 62
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 495
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'8'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 62
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 541
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'Nine'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 65
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 590
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'Ten'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 65
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 639
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'11'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 687
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'12'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 735
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'13'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 783
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'14'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 831
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'15'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 879
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'16'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 927
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'17'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 975
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'18'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 1023
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'19'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 500 47
+12/02/2020 12:45:35 PM ERROR Assertion After Post - GetAll - Get Response Status code: Output: '500', Expected: '200' - Fail
+12/02/2020 12:45:35 PM INFO Execution Completed SNo#4, TestCase:post 20 quotes positive, Status:Fail 
+
+
+12/02/2020 12:45:35 PM INFO Executing SNo#5, TestCase:post > 20 quotes negative
+12/02/2020 12:45:35 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:35 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'4'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 62
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 357
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'5'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 62
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 403
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'6'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 62
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 449
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'7'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 62
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 495
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'8'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 62
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 541
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'Nine'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 65
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 590
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'Ten'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 65
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 639
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'11'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 687
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'12'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 735
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'13'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 783
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'14'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 831
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'15'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 879
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'16'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 927
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'17'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:35 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 975
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:35 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:35 PM INFO 
+12/02/2020 12:45:35 PM INFO Posting input payload qutotes:'18'
+12/02/2020 12:45:35 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 1023
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Posting input payload qutotes:'19'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 64
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 500 47
+12/02/2020 12:45:36 PM ERROR Assertion After Post - GetAll - Get Response Status code: Output: '500', Expected: '200' - Fail
+12/02/2020 12:45:36 PM INFO Execution Completed SNo#5, TestCase:post > 20 quotes negative, Status:Fail 
+
+
+12/02/2020 12:45:36 PM INFO Executing SNo#6, TestCase:post invalid type quotes Negative
+12/02/2020 12:45:36 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:36 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Posting input payload qutotes:'4'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 400 80
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status Error Message - Pass
+12/02/2020 12:45:36 PM INFO Execution Completed SNo#6, TestCase:post invalid type quotes Negative, Status:Pass 
+
+
+12/02/2020 12:45:36 PM INFO Executing SNo#7, TestCase:Delete single quotes positive
+12/02/2020 12:45:36 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:36 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Deleting input payload qutotes:'1'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "DELETE /quotes/1 HTTP/1.1" 200 32
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 226
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - Deleted Quotes Removed from the list - Pass
+12/02/2020 12:45:36 PM INFO Execution Completed SNo#7, TestCase:Delete single quotes positive, Status:Pass 
+
+
+12/02/2020 12:45:36 PM INFO Executing SNo#8, TestCase:Delete multiple quotes positive
+12/02/2020 12:45:36 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:36 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Deleting input payload qutotes:'1'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "DELETE /quotes/1 HTTP/1.1" 200 32
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 226
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - Deleted Quotes Removed from the list - Pass
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Deleting input payload qutotes:'2'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "DELETE /quotes/2 HTTP/1.1" 200 32
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 138
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - Deleted Quotes Removed from the list - Pass
+12/02/2020 12:45:36 PM INFO Execution Completed SNo#8, TestCase:Delete multiple quotes positive, Status:Pass 
+
+
+12/02/2020 12:45:36 PM INFO Executing SNo#9, TestCase:Delete same quotes twice Negative
+12/02/2020 12:45:36 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:36 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Deleting input payload qutotes:'1'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "DELETE /quotes/1 HTTP/1.1" 200 32
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 226
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - Deleted Quotes Removed from the list - Pass
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Deleting input payload qutotes:'1'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "DELETE /quotes/1 HTTP/1.1" 404 48
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status Error Message - Pass
+12/02/2020 12:45:36 PM INFO Execution Completed SNo#9, TestCase:Delete same quotes twice Negative, Status:Pass 
+
+
+12/02/2020 12:45:36 PM INFO Executing SNo#10, TestCase:Delete Non existing quotes Negative
+12/02/2020 12:45:36 PM INFO Prerequisite Step - Reset Flag Enabled In Input
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "POST /reset HTTP/1.1" 200 32
+12/02/2020 12:45:36 PM INFO Prerequisite : Reset API status - Pass
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Deleting input payload qutotes:'11'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "DELETE /quotes/11 HTTP/1.1" 404 48
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status Error Message - Pass
+12/02/2020 12:45:36 PM INFO Execution Completed SNo#10, TestCase:Delete Non existing quotes Negative, Status:Pass 
+
+
+12/02/2020 12:45:36 PM INFO Executing SNo#11, TestCase:Post Two Quotes Without Reset
+12/02/2020 12:45:36 PM INFO Prerequisite Step - Reset Flag Not Enabled In Input
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Posting input payload qutotes:'Fourth Quotes ID'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 77
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 372
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Posting input payload qutotes:'Fifth Quotes ID'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "POST /quotes HTTP/1.1" 201 76
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion Post - Post Response Status Quote Text - Pass
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 432
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Post - Newly Posted Quotes Appended to the end - Pass
+12/02/2020 12:45:36 PM INFO Execution Completed SNo#11, TestCase:Post Two Quotes Without Reset, Status:Pass 
+
+
+12/02/2020 12:45:36 PM INFO Executing SNo#12, TestCase:Delete One Quotes of sno#11 without Reset Positive
+12/02/2020 12:45:36 PM INFO Prerequisite Step - Reset Flag Not Enabled In Input
+12/02/2020 12:45:36 PM INFO 
+12/02/2020 12:45:36 PM INFO Deleting input payload qutotes:'4'
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "DELETE /quotes/4 HTTP/1.1" 200 32
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion Delete - Delete Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes HTTP/1.1" 200 371
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Id Has Duplicates - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - GetAll - Get Response Status Quote Id's Sorting Order - Pass
+12/02/2020 12:45:36 PM INFO Assertion After Delete - Deleted Quotes Removed from the list - Pass
+12/02/2020 12:45:36 PM INFO Execution Completed SNo#12, TestCase:Delete One Quotes of sno#11 without Reset Positive, Status:Pass 
+
+
+12/02/2020 12:45:36 PM INFO Executing SNo#13, TestCase:Get Quotes deleted in sno#12 without Reset Negative
+12/02/2020 12:45:36 PM INFO Prerequisite Step - Reset Flag Not Enabled In Input
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes/4 HTTP/1.1" 404 48
+12/02/2020 12:45:36 PM INFO Assertion - GetSpecific - Get Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion - GetSpecific - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion - GetSpecific - Get Response Status Error Message - Pass
+12/02/2020 12:45:36 PM INFO Execution Completed SNo#13, TestCase:Get Quotes deleted in sno#12 without Reset Negative, Status:Pass 
+
+
+12/02/2020 12:45:36 PM INFO Executing SNo#14, TestCase:Get Quotes posted in sno#11 without Reset Positive
+12/02/2020 12:45:36 PM INFO Prerequisite Step - Reset Flag Not Enabled In Input
+12/02/2020 12:45:36 PM DEBUG Starting new HTTP connection (1): 127.0.0.1:6543
+12/02/2020 12:45:36 PM DEBUG http://127.0.0.1:6543 "GET /quotes/5 HTTP/1.1" 200 76
+12/02/2020 12:45:36 PM INFO Assertion - GetSpecific - Get Response Status code - Pass
+12/02/2020 12:45:36 PM INFO Assertion - GetSpecific - Get Response Status Ok Tag - Pass
+12/02/2020 12:45:36 PM INFO Assertion - GetSpecific - Get Response Status Quote Text - Pass
+12/02/2020 12:45:36 PM INFO Execution Completed SNo#14, TestCase:Get Quotes posted in sno#11 without Reset Positive, Status:Pass 
+
+

@@ -1,0 +1,27 @@
+HAIVISION Rest API Assignment - Test Summary Log 
+*************************************************
+SNO  	 STATUS  TEST_CASE_NAME 
+*************************************************
+1      	 PASS 	 Get All Quotes Positive 
+2.1    	 PASS 	 Get specific quotes Positive 
+2.2    	 PASS 	 Get Non Existing quotes Negative 
+3      	 PASS 	 post single quotes positive 
+4      	 FAIL 	 post 20 quotes positive 
+5      	 FAIL 	 post > 20 quotes negative 
+6      	 PASS 	 post invalid type quotes Negative 
+7      	 PASS 	 Delete single quotes positive 
+8      	 PASS 	 Delete multiple quotes positive 
+9      	 PASS 	 Delete same quotes twice Negative 
+10     	 PASS 	 Delete Non existing quotes Negative 
+11     	 PASS 	 Post Two Quotes Without Reset 
+12     	 PASS 	 Delete One Quotes of sno#11 without Reset Positive 
+13     	 PASS 	 Get Quotes deleted in sno#12 without Reset Negative 
+14     	 PASS 	 Get Quotes posted in sno#11 without Reset Positive 
+
+****************
+OVERALL SUMMARY
+****************
+PASS  - 013 
+FAIL  - 002 
+TOTAL - 015 
+****************

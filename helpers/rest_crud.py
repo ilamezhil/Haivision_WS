@@ -3,6 +3,7 @@ import requests
 import logging
 import json
 import re
+import os
 
 global input
 global tc_passcount
@@ -17,7 +18,7 @@ import pytest
 def api_methods_all(input,tc_passcount,tc_failcount):
     logger = logging.getLogger(__name__)
     
-    log_summary = open("test_summary.log", "w")
+    log_summary = open("./log/Haivision_Test_Summary.log", "w")
     log_summary.write("HAIVISION Rest API Assignment - Test Summary Log \n")
     log_summary.write("*************************************************\n")
     log_summary.write("SNO  \t STATUS  TEST_CASE_NAME \n")
@@ -115,7 +116,9 @@ def api_methods_all(input,tc_passcount,tc_failcount):
     log_summary.write(f"PASS  - {tc_passcount:03} \nFAIL  - {tc_failcount:03} \nTOTAL - {tc_passcount+tc_failcount:03} \n")
     log_summary.write("****************\n")
     log_summary.close()
+    print(f"Refer '{os.path.realpath(log_summary.name)}' and '.\\log\\Haivision_Test_Detail.log' files for Summary and Detailed log")
     test_final(passlist,faillist)
+
 
 def write_logsummary(log_summary, sno, status, tc_name,tc_passcount,tc_failcount):
     #write test case summary and update pass and fail count
